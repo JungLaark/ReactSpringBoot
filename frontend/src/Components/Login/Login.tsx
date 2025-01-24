@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {Box, Button, Card, CardContent, TextField, Typography, Link} from "@mui/material";
 import styled from "@emotion/styled";
 
@@ -18,6 +18,10 @@ const FullHeightContainer= styled(Box)`
 
 const Login = () => {
     const handleLogin = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+    }
+
+    const handleGoogleLogin = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
     }
 
@@ -55,6 +59,17 @@ const Login = () => {
                             sx={{borderRadius: 2, mb: 2}}
                         >
                             Log In
+                        </Button>
+                    </form>
+                    <form onSubmit={handleGoogleLogin}>
+                        <Button
+                            type="submit"
+                            variant="contained"
+                            color="primary"
+                            fullWidth
+                            sx={{borderRadius: 2, mb: 2}}
+                        >
+                            Google Login
                         </Button>
                     </form>
                     <Typography align="center" variant="body2">
